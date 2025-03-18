@@ -31,9 +31,14 @@ function visualizar_lista () {
 }
 
 function sortearAmigo (){
-    const indiceAleatorio = Math.floor(Math.random() * lista__amigos.length);
-    // Limpia la Lista del HTML
-    lista__amigos__html.innerHTML = ''; 
-    // Mostrar el nombre sorteado
-    lista__amigos__html.innerHTML = lista__amigos[indiceAleatorio];
+    if (lista__amigos.length ==  0) {
+        alert("Lista vacia\nIngrese un Nombre");
+        return;
+    } else {
+        let indiceAleatorio = Math.floor(Math.random() * lista__amigos.length);
+        // Limpia la Lista del HTML
+        lista__amigos__html.innerHTML = ''; 
+        // Mostrar el nombre sorteado
+        lista__amigos__html.innerHTML = `El amigo sorteado es ${lista__amigos[indiceAleatorio]}`;
+    }    
 }
